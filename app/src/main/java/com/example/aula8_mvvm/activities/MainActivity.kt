@@ -12,6 +12,7 @@ import com.example.aula8_mvvm.NavigationManager
 import com.example.aula8_mvvm.R
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.drawer_header.*
 import kotlinx.android.synthetic.main.fragment_calculator.*
 
 class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
@@ -19,8 +20,6 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
     private val VISOR_KEY = "visor"
 
     private val TAG = MainActivity::class.java.simpleName
-
-    val userInfo = intent.getStringArrayExtra(EXTRA_USER)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,15 +31,13 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
             supportFragmentManager
         )
 
-        val header = nav_drawer.getHeaderView(0)
-        val username : TextView = header.findViewById(R.id.drawer_username)
-        val email : TextView = header.findViewById(R.id.drawer_email)
-        username.text = userInfo[0]
-        email.text = userInfo[1]
+        val userInfo = intent.getStringArrayListExtra(EXTRA_USER)
+        drawer_username.text = userInfo[0]
+        drawer_email.text = userInfo[1]
+
     }
 
     override fun onStart() {
-
         super.onStart()
     }
     private fun screenRotated(savedInstanceState: Bundle?): Boolean{

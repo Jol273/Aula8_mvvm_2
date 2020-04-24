@@ -1,19 +1,22 @@
 package com.example.aula8_mvvm.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
-import android.widget.TextView
 import androidx.lifecycle.ViewModelProviders
 import butterknife.ButterKnife
 import butterknife.OnClick
 import com.example.aula8_mvvm.NavigationManager
 import com.example.aula8_mvvm.R
+import com.example.aula8_mvvm.activities.EXTRA_USER
 import com.example.aula8_mvvm.activities.LoginActivity
+import com.example.aula8_mvvm.activities.MainActivity
 import com.example.aula8_mvvm.viewmodels.LoginViewModel
+import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginFragment : Fragment() {
 
@@ -29,10 +32,13 @@ class LoginFragment : Fragment() {
 
     @OnClick(R.id.login_button)
     fun onClickLogin(){
-        val username : EditText? = view?.findViewById(R.id.login_username)
-        val password : EditText? = view?.findViewById(R.id.login_password)
-        val userInfo = arrayListOf(username.toString(),password.toString())
-        LoginActivity().enterCalculator(userInfo)
+        val username = login_username.text.toString()
+        val password = login_password.text.toString()
+        val userInfo = arrayListOf(username,password)
+        val intent = Intent(activity, MainActivity::class.java)
+        intent.apply { putStringArrayListExtra(EXTRA_USER,userInfo) }
+        startActivity(intent)
+        activity!!.finish()
     }
 
     @OnClick(R.id.register_button)
