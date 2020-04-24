@@ -14,19 +14,21 @@
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/ic_launcher"
         android:id="@+id/imageView"
-        android:layout_marginBottom="15dp"/>
+        android:layout_marginBottom="15dp" />
 
     <TextView
         android:id="@+id/drawer_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
+        android:text="ola"
         android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/drawer_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="adeus"
         android:textColor="#FFFFFF"/>
 
 </LinearLayout>

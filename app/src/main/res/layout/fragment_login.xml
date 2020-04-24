@@ -1,6 +1,5 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -24,7 +23,6 @@
             android:gravity="center"
             android:backgroundTint="@color/gray"
             android:autofillHints="username"
-            android:inputType="text"
             android:padding="20dp"/>
 
     </com.google.android.material.textfield.TextInputLayout>

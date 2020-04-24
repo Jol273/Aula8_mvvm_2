@@ -31,9 +31,10 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
             supportFragmentManager
         )
 
-        val userInfo = intent.getStringArrayListExtra(EXTRA_USER)
-        drawer_username.text = userInfo[0]
-        drawer_email.text = userInfo[1]
+        val username = intent.getStringExtra(EXTRA_USERNAME)
+        val userEmail = intent.getStringExtra(EXTRA_USER_EMAIL)
+        username?.let { drawer_username.text = username}
+        userEmail?.let { drawer_email.text = userEmail}
 
     }
 
