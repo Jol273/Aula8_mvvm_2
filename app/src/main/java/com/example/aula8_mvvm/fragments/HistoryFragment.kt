@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.fragment_history.*
 
 class HistoryFragment : Fragment(),OnDatasetChanged {
 
-    private var operations = ListStorage.getInstance().getAll()
+    //private var operations = ListStorage.getInstance().getAll()
     private var historyViewModel : ListStorage? = null
 
 

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import com.example.aula8_mvvm.NavigationManager
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
 
     private val TAG = MainActivity::class.java.simpleName
 
+    val userInfo = intent.getStringArrayExtra(EXTRA_USER)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.i(TAG,"o metodo onCreate foi invocado")
@@ -29,8 +32,17 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
             supportFragmentManager
         )
 
-}
+        val header = nav_drawer.getHeaderView(0)
+        val username : TextView = header.findViewById(R.id.drawer_username)
+        val email : TextView = header.findViewById(R.id.drawer_email)
+        username.text = userInfo[0]
+        email.text = userInfo[1]
+    }
 
+    override fun onStart() {
+
+        super.onStart()
+    }
     private fun screenRotated(savedInstanceState: Bundle?): Boolean{
         return savedInstanceState != null
     }

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -23,6 +22,7 @@
             android:textSize="24sp"
             android:hint="@string/username"
             android:gravity="center"
+            android:backgroundTint="@color/gray"
             android:autofillHints="username"
             android:inputType="text"
             android:padding="20dp"/>
@@ -41,6 +41,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="24sp"
+            android:backgroundTint="@color/gray"
             android:hint="@string/password"/>
 
     </com.google.android.material.textfield.TextInputLayout>

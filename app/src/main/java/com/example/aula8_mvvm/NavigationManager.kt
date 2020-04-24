@@ -18,21 +18,23 @@ abstract class NavigationManager{
             transition.commit()
         }
 
+        //calculator Route
         fun goToCalculatorFragment(fm: FragmentManager){
             placeFragment(fm,
                 CalculatorFragment()
             )
         }
 
+        //Operations History Route
         fun goToHistoryFragment(fm: FragmentManager){
             placeFragment(fm,
                 HistoryFragment()
             )
         }
 
+        //
         fun goToLoginFragment(fm: FragmentManager){
-            placeFragment(fm,
-                LoginFragment()
+            placeFragment(fm, LoginFragment()
             )
         }
 

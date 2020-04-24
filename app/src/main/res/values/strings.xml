@@ -38,4 +38,5 @@
     <string name="criar_registo">Criar Registo</string>
     <string name="e_mail">E-mail</string>
     <string name="confirme_password">Confirme Password</string>
+    <string name="return_to_login">Menu de login</string>
 </resources>
