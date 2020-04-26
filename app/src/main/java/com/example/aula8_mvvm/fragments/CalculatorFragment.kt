@@ -27,8 +27,8 @@ class CalculatorFragment : Fragment(), OnDisplayChanged,OnDatasetChanged{ //, On
     private val TAG = MainActivity::class.java.simpleName
 
     private lateinit var viewModel: CalculatorViewModel
-    private var historyViewModel: ListStorage? = null
-    private var operations = ListStorage.getInstance().getAll()
+    private var historyViewModel: HistoryViewModel? = null
+    //private var operations : List<Operation>? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_calculator, container, false)
@@ -49,7 +49,7 @@ class CalculatorFragment : Fragment(), OnDisplayChanged,OnDatasetChanged{ //, On
     override fun onStart() {
         viewModel.registerDisplayListener(this)
         historyViewModel?.registerDatasetListener(this)
-        makeHistory(operations)
+        //makeHistory(operations)
         super.onStart()
     }
 

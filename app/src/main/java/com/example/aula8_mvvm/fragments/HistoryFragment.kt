@@ -19,23 +19,23 @@ import kotlinx.android.synthetic.main.fragment_history.*
 class HistoryFragment : Fragment(),OnDatasetChanged {
 
     //private var operations = ListStorage.getInstance().getAll()
-    private var historyViewModel : ListStorage? = null
+    private var historyViewModel : HistoryViewModel? = null
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_history, container, false)
-        /*CoroutineScope(Dispatchers.Main).launch {
-        }*/
     }
 
     override fun onStart() {
         historyViewModel?.registerDatasetListener(this)
-        /*list_history.layoutManager = LinearLayoutManager(activity as Context)
-        list_history.adapter = HistoryAdapter(
-            activity as Context,
-            R.layout.item_expression,
-            operations
-        )*/
+        list_history.layoutManager = LinearLayoutManager(activity as Context)
+        list_history.adapter = historyViewModel?.historic?.let {
+            HistoryAdapter(
+                activity as Context,
+                R.layout.item_expression,
+                it
+            )
+        }
         super.onStart()
     }
 
